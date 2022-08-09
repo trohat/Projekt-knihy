@@ -10,11 +10,7 @@ def pridat_knihu(request):
         formular = KnihaForm(request.POST)
 
         if formular.is_valid():
-            jmeno = formular.cleaned_data["jmeno"]
-            autor = formular.cleaned_data["autor"]
-            rok = formular.cleaned_data["rok"]
-            kniha = Kniha(jmeno=jmeno, autor=autor, rok=rok)
-            kniha.save()
+            formular.save()
             return redirect("dekuji")
     else:    
         formular = KnihaForm()
@@ -25,3 +21,6 @@ def pridat_knihu(request):
 
 def dekuji(request):
     return render(request, "knihy\dekuji.html")
+
+# view funkce
+# class based views - views založené na třídách

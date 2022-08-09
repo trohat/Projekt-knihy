@@ -10,7 +10,6 @@
     <h1>Tohle je stránka na přidání knihy...</h1>
     <form action="" method="POST">
         {% csrf_token %}
-        {{ form }}
         {% for pole in form %}
         <div>
             {{ pole.label_tag }}
